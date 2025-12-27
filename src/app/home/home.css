@@ -1,0 +1,7 @@
+main {
+  padding: 16px;
+}
+p {
+  display: flex;
+  gap: 10px;
+}
