@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-greeting',
@@ -7,5 +7,16 @@ import { Component, input } from '@angular/core';
   styleUrl: './greeting.css',
 })
 export class Greeting {
-  msg = input('defaul name:john');
+  counter = signal(0);
+  inc() {
+    this.counter.update((v) => v+1);
+  }
+
+  dec() {
+    this.counter.update((v) => v-1);
+  }
+
+  reset() {
+    this.counter.set(0);
+  }
 }
