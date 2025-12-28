@@ -1,4 +1,6 @@
 export interface Grocerie {
+  userId: number;
   id: number;
-  name: String;
+  title: string;
+  completed: boolean;
 }

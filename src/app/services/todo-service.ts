@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Grocerie,  } from '../components/todo-list/list-interface';
+import { inject, Injectable } from '@angular/core';
+import { Grocerie } from '../components/todo-list/list-interface';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TodoService {
-  list:Array<Grocerie>=[
-    {id:1,name:"milk"},
-    {id:2,name:"fish"}
-  ];
+  private http = inject(HttpClient);
+  fetchTodos() {
+    return this.http.get<Array<Grocerie>>('https://jsonplaceholder.typicode.com/todos');
+  }
 }

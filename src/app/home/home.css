@@ -1,7 +1,8 @@
 main {
   padding: 16px;
 }
-p {
+li {
   display: flex;
   gap: 10px;
+  cursor:pointer;
 }
